@@ -1,12 +1,11 @@
-# Stage 1: Build
-FROM node:18 AS builder
-WORKDIR /app
-COPY . .
-RUN npm install
-RUN npm run build
+FROM node:18
 
-# Stage 2: Serve with a lightweight web server
-FROM nginx:alpine
-COPY --from=builder /app/dist /usr/share/nginx/html
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+WORKDIR /app
+
+COPY . .
+
+RUN npm install
+
+EXPOSE 4173
+
+CMD ["npm", "start"]
