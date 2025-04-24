@@ -1,4 +1,4 @@
-# Ecomdev 0
+# Ecomdev 
 
 This is an e-commerce web application with features like user login, product catalog, cart, wishlist, and order management.
 
